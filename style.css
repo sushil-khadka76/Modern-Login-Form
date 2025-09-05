@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.formContainer {
+    z-index: 999;
+    width: auto;
+    height: 100p;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Form {
+    padding: 10px;
+}
+
+
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: clamp(12px,2vw,16px);
+    transition: all 0.3s ease;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f7fafc;
+    outline: none;
+    border: 1px solid #764ba2;
+    border-radius: 5px;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    background: white;
+}
+
+.input-group input::placeholder {
+    color: #a0aec0;
+    font-size: clamp(12px,2vw,16px);
+}
+
+#signupBtn,
+#loginBtn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: clamp(12px,2vw,18px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3),
+        /* inner shadow */
+        0 4px 6px rgba(0, 0, 0, 0.2);
+    /* outer shadow for depth */
+}
+
+
+#signupBtn:hover,
+#loginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.4),
+        0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+#signupBtn:active,
+#loginBtn:active {
+    transform: translateY(0);
+}
+
+/* Adding some icons for visual enhancement */
+.input-group::after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 42px;
+    color: #a0aec0;
+    font-size: 16px;
+}
+
+
+#signup {
+    display: none;
+
+}
+
+
+#showLogin,
+#hideLogin {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.span-toggle {
+    z-index: 99;
+    position: absolute;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: all 0.6s linear;
+    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.4),
+        0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.span-left {
+    height: 100%;
+    width: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0 100px 100px 0;
+}
+
+.span-right {
+    height: 100%;
+    width: 52%;
+    transform: translate(46%, 0);
+    border-radius: 150px 0px 0px 150px;
+}
+
+.Message {
+    text-align: center;
+}
+
+
+.login-msg{
+    width: 100%;
+}
+
+.login-form{
+    width: 100%;
+    
+}
+
+.signup-msg{
+    width: 60%;
+    padding-left: 50px;
+    margin-right: -100px;
+}
+
+.signup-form{
+    width: 40%;
+}
+
+.Message h1 {
+    font-size: clamp(20px, 3vw, 34px);
+    color: #d2d2d4;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: #d2d2d4;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+.Message h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #d2d2d4;
+    border-radius: 2px;
+}
+
+.Message p {
+    font-size: clamp(12px, 2vw, 18px);
+    color: #cad7e8;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.formToggleBtn {
+    color: #05193f;
+    border: none;
+    font-size: clamp(12px, 2.5vw, 16px );
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.formToggleBtn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Animation for the message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Form,
+.Message {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.toastMsg {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 220px;
+    max-width: 300px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(50px) scale(0);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4), 0 0 15px rgba(118, 75, 162, 0.3);
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Show toast */
+.toastMsg.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* Message inside toast */
+.toastMsg .msg {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Timer bar at bottom */
+.toast-timer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    animation: timerAnimation 3s linear forwards;
+}
+
+/* Timer shrink animation */
+@keyframes timerAnimation {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .main{
+        height: 150vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100vh;
+    }
+
+    .formContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .span-left {
+    height: 38%;
+    width: 100%;
+    transform: translate(0, -82%);
+    border-radius:0 0 100px 100px ;
+}
+
+.span-right {
+    height: 20%;
+    width: 100%;
+    transform: translate(0, 45%);
+    border-radius: 150px 150px 0 0;
+}
+
+.Message p{
+    margin-bottom: 10px;
+}
+
+.signup-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+}
+
+@media (min-width:310px) and (max-width:330px){
+    .signup-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130%;
+    
+    translate: -30% 0;
+}
+
+.Container{
+    height: auto;
+}
+
+.signup-form{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.span-right {
+    height:45%;
+    width: 100%;
+    transform: translate(0, 100%);
+    border-radius: 100px 100px 0 0;
+}
+
+}
+
+@media (min-width:331px) and (max-width:400px){
+    .signup-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130%;
+    translate: -25% 0;
+}
+
+.Container{
+    height: auto;
+}
+
+.login-form{
+    margin-top: 40px;
+}
+
+.signup-form{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.span-right {
+    height:45%;
+    width: 100%;
+    transform: translate(0, 100%);
+    border-radius: 100px 100px 0 0;
+}
+
+}
+
+@media (min-width:401px) and (max-width:500px){
+    .signup-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130%;
+    translate: -25% 0;
+}
+
+.login-form{
+    margin-top: 40px;
+}
+
+.Container{
+    height: auto;
+}
+
+.signup-form{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.span-right {
+    height:45%;
+    width: 100%;
+    transform: translate(0, 100%);
+    border-radius: 100px 100px 0 0;
+}
+
+}

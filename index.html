@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Modern Login form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="main">
+    <div class="Container">
+        <div class="formContainer" id="login">
+            <div class="login-msg Message">
+                <h1>
+                    Welcome Back!
+                </h1>
+
+                <p>
+                    Please log in to access your account  and continue where you left off.
+                </p>
+
+                <button id="hideLogin" class="formToggleBtn">
+                     New user? Signup
+                   </button>
+
+
+            </div>
+            <div class="login-form Form">
+                <div class="username input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username">
+                </div>
+
+
+                <div class="password input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                </div>
+
+                <button id="loginBtn" onclick="loginForm()">Login</button>
+            </div>
+        </div>
+
+        <div class="formContainer " id="signup">
+            
+            <div class="signup-form Form">
+                <div class="username input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="signupUsername" placeholder="Enter your username">
+                </div>
+
+                <div class="email input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email">
+                </div>
+
+                <div class="password input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Enter your password">
+                </div>
+
+                <button id="signupBtn">Signup</button>
+            </div>
+
+            <div class="signup-msg Message">
+                <h1>
+                    Hello User!
+                </h1>
+
+                <p>
+                    Create your account to join us and start using all our features."
+                </p>
+
+                   <button id="showLogin" class="formToggleBtn">
+                     Already have an account ? Login
+                   </button>
+
+            </div>
+        </div>
+
+        <span class="span-left span-toggle"></span>
+    </div>
+</div>
+
+    
+    <script src="script.js"></script>
+</body>
+<div class="toastMsg ">
+        <span class="msg"></span>
+    </div>
+</html>
