@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         spanToggle.classList.add("span-left");
         spanToggle.classList.remove("span-right");
         showToast("Switched to Login Form");
-        if (window.innerWidth <= 500) {
-       main.style.marginTop = '-26vh';
-        }
     });
 
     hideLoginBtn.addEventListener("click", function () {
@@ -24,9 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         spanToggle.classList.remove("span-left");
         spanToggle.classList.add("span-right");
         showToast("Switched to Signup Form");
-        if (window.innerWidth <= 500) {
-       main.style.marginTop = '-16vh';
-  }
     });
 
     
@@ -131,6 +125,17 @@ function togglePassword(inputId, eyeBtn) {
         input.type = 'password';
         eyeBtn.innerHTML = '<i class="fa-solid fa-eye"></i>';
     }
+}
+
+// Hide toast function
+function hideToast() {
+    const toast = document.querySelector(".toastMsg");
+    const msg = toast.querySelector(".msg");
+    const timer = toast.querySelector(".toast-timer");
+    
+    toast.classList.remove("show");
+    msg.innerText = "";
+    if (timer) timer.remove();
 }
 
 // Toast function
