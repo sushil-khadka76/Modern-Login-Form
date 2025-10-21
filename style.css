@@ -359,7 +359,7 @@ body {
 
 @media (max-width: 500px) {
     .main{
-        height: 100vh;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -369,7 +369,9 @@ body {
         display: flex;
         flex-direction: column;
         width: 80%;
-        height: 100vh;
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .formContainer{
