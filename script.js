@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login');
     const signupForm = document.getElementById('signup');
     const spanToggle = document.querySelector(".span-toggle");
+    let main = document.querySelector(".main");
 
     // Toggle forms
     showLoginBtn.addEventListener("click", function () {
@@ -12,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
         spanToggle.classList.add("span-left");
         spanToggle.classList.remove("span-right");
         showToast("Switched to Login Form");
+        if (window.innerWidth <= 500) {
+       main.style.marginTop = '-26vh';
+        }
     });
 
     hideLoginBtn.addEventListener("click", function () {
@@ -20,7 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
         spanToggle.classList.remove("span-left");
         spanToggle.classList.add("span-right");
         showToast("Switched to Signup Form");
+        if (window.innerWidth <= 500) {
+       main.style.marginTop = '-16vh';
+  }
     });
+
+    
 
     // Signup functionality
     document.getElementById('signupBtn').addEventListener('click', function () {
@@ -111,6 +120,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// Toggle password visibility
+function togglePassword(inputId, eyeBtn) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+        eyeBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+    } else {
+        input.type = 'password';
+        eyeBtn.innerHTML = '<i class="fa-solid fa-eye"></i>';
+    }
+}
 
 // Toast function
 function showToast(message) {
