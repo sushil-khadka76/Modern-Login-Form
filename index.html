@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Modern Login form</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -36,7 +37,12 @@
 
                 <div class="password input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                    <div class="password-container">
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                        <span class="eye-btn" onclick="togglePassword('loginPassword', this)">
+                            <i class="fa-solid fa-eye"></i>
+                        </span>
+                    </div>
                 </div>
 
                 <button id="loginBtn" onclick="loginForm()">Login</button>
@@ -58,7 +64,10 @@
 
                 <div class="password input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="signupPassword" placeholder="Enter your password">
+                    <div class="password-container">
+                        <input type="password" id="signupPassword" placeholder="Enter your password">
+                        <span class="eye-btn" onclick="togglePassword('signupPassword', this)"><i class="fa-solid fa-eye"></i></span>
+                    </div>
                 </div>
 
                 <button id="signupBtn">Signup</button>
